@@ -1,0 +1,48 @@
+<p class="admin1stH5">
+  You may set default variables with this form.
+</p>
+<div>
+  <form name="defaultValuesForm" ng-submit="submit()">
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Bio</label>
+      </div>
+      <div flex="25">
+        <input type="string" name="bio" id="bio" ng-model="defaultVariables.bio" required>
+      </div>
+    </div>
+
+
+    <div layout="row" class="adminFormDiv even">
+      <div flex="25">
+        <label class="adminLabel">Core Beliefs</label>
+      </div>
+      <div flex="25">
+        <input type="string" name="coreBeliefs" id="coreBeliefs" ng-model="defaultVariables.coreBeliefs" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Development</label>
+      </div>
+      <div flex="25">
+        <input type="string" name="development" id="development" ng-model="defaultVariables.development" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv even">
+      <div flex="25">
+        <label class="adminLabel">Interests</label>
+      </div>
+      <div flex="25">
+        <input type="string" name="interests" id="interests" ng-model="defaultVariables.interests" required>
+      </div>
+    </div>
+
+
+
+    <input type="submit" id="submit" value="Submit" ng-click="defaultValuesForm.$valid && setDefaultValues(defaultVariables)" />
+  </form>
+</div>

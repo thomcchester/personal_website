@@ -1,0 +1,219 @@
+$break-small:450px;
+$break-large:451px;
+
+@import "bourbon/bourbon";
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+    }
+}
+@mixin transColor(){
+  background-image: url("./pictures/wood.jpg"),
+                     -moz-linear-gradient(top, #ADB2B6 0%, #ABAEB3 100%);
+   background-image: url("./pictures/wood.jpg"),
+                     -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ADB2B6), color-stop(100%, #ABAEB3));
+   background-image: url("./pictures/wood.jpg"),
+                     linear-gradient(to bottom, #ADB2B6, #ABAEB3);
+}
+@mixin centerer($position) {
+  position: $position;
+  top:10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin otherCenterer($position) {
+  position: $position;
+  top:10%;
+  left: 60%;
+  transform: translate(-40%, -50%);
+}
+@mixin radial-gradient($from, $to) {
+	background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+	background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+	background-color: $from;
+}
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+
+
+.ng-scope{
+  // @include radial-gradient(white, black);
+  margin-top: 0px;
+}
+
+
+body{
+  background-size: 100%;
+  @include background('./pictures/bricks.png');
+}
+
+.biothing:active{
+  .bioListHtml{
+    display:none;
+  }
+}
+
+.topBar{
+  @include radial-gradient(rgba(255,255,255,.5), rgba(155,155,155,.4));
+  @media screen and (max-width: $break-small){
+    width:15%;
+    height:100%;
+    .topBox{
+      width:100%;
+      font-size: .8em;
+      height:15%;
+      text-align: center;
+    };
+  }
+  @media screen and (min-width: $break-large){
+    width:100%;
+    height:10%;
+    .topBox{
+      margin-top:10px;
+      float:left;
+      width:15%;
+      height:100%;
+    };
+    .nothing{
+      width:50%;
+    }
+  }
+}
+.dropList{
+  list-style: none;
+  position:absolute;
+  top:-150px;
+}
+
+.topBox:hover{
+  @include transition(.2s ease);
+  margin-top: 2%;
+}
+.topBox:hover .dropList{
+  @include transition(.5s ease);
+  @include radial-gradient(rgba(255,255,255,.5), rgba(155,155,155,.4));
+  top:10%;
+  width:100px;
+  text-align: center;
+
+}
+
+
+
+main.ng-scope{
+  width:100%;
+  height:50%;
+  @include otherCenterer(absolute);
+  margin-top: 30%;
+
+}
+
+
+
+
+
+
+ng-view{
+  width:100%;
+  height:50%;
+  @include otherCenterer(absolute);
+  top:60%
+}
+
+
+.bioListHtml{
+  width:100%;
+  height: 100%;
+
+  background:url("./pictures/wood.jpg") no-repeat;
+  opacity:.75;
+  position: absolute;
+  color:rgba(0,0,0,1);
+  @include centerer(absolute);
+  border-radius: 8px;
+  @include transition(.2s ease);
+}
+
+.bioAttr{
+  opacity: 1;
+  @include centerer(absolute);
+  @include transition(.2s ease);
+  margin-left:0px;
+}
+
+.initials{
+
+  p{
+    opacity:0;
+  }
+  background:url("./pictures/tcc2.png") no-repeat;
+  background-size: 100%;
+  width:25%;
+  height:35%;
+  @media screen and (max-width: $break-small){
+    @include centerer(absolute);
+    margin-top: 25px;
+
+  }
+  @media screen and (min-width: $break-large){
+    margin: 0px;
+    height:50%;
+
+
+  }
+}
+
+.admin{
+  position:absolute;
+  font-size: .1em;
+  right:0px;
+  bottom:0px;
+}

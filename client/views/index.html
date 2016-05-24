@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="chickApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tommy Chester</title>
+
+    <!-- package manager scripts -->
+
+    <script type="text/javascript" src="../vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../vendors/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../vendors/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../vendors/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../vendors/angular-route/angular-route.min.js"></script>
+
+    <!-- custom scripts -->
+    <script type="text/javascript" src="../scripts/app.min.js"></script>
+    <!--
+    s -->
+    <link rel="stylesheet" href="../vendors/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="main" >
+  <ng-view>
+
+  </ng-view>
+  <div class="topBar" ng-controller="InputController">
+    <div class="topBox nothing">
+    </div>
+    <div class="about topBox">
+      about
+      <div class="dropList">
+        <p class="biothing"><a href = "#bioList">Bio</a></p>
+        <p><a href = "#coreList">Core Beliefs</a></p>
+        <p><a href = "#developmentList">Development</a></p>
+        <p><a href = "#interestsList">Interests</a></p>
+      </div>
+    </div>
+    <div class="portfolio topBox">
+      portfolio
+      <div class="dropList">
+        <p>dataFit</p>
+        <p><a href ="https://ancient-sands-24557.herokuapp.com/" target="_blank">Duplex Chicks</a></p>
+      </div>
+    </div>
+    <div class="contact topBox">
+      contact
+      <div class="dropList">
+        <p><a href="mailto:thomas.charles.chester@gmail.com?Subject=I%20Saw%20Your%20Website" target="_top" >email</a></p>
+        <!--TODO add github link  -->
+        <p><a href="https://github.com/thomcchester" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="initials" ng-controller="InputController" ng-cloak id="all">
+
+    <p>
+      asdf
+    </p>
+  </div>
+  <div class="admin">
+    <a href="http://localhost:5500/views/login.html">admin</a>
+  </div>
+
+</body>
+</html>
