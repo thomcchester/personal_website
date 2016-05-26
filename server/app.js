@@ -24,7 +24,7 @@ var register = require('./routes/register.js');
 // DATABASE VARS
 var mongoURI =    process.env.MONGODB_URI ||
    process.env.MONGOHQ_URL ||
-   "mongodb://localhost/tommysite";
+   "mongodb://heroku_b81q1sb0:qvciumsfn5ts0fd7s2efnhlhkq@ds017193.mlab.com:17193/heroku_b81q1sb0";
 var mongoDB = mongoose.connect(mongoURI).connection;
 var defaultsExist = null;
 
